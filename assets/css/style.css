@@ -386,3 +386,174 @@ body::after {
         font-size: 1.15rem;
     }
 }
+
+.btn {
+    isolation: isolate;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .2);
+    transform: translate(-50%, -50%);
+    transition: width .5s ease, height .5s ease, opacity .5s ease;
+    opacity: 0;
+    z-index: -1;
+}
+
+.btn:active::after {
+    width: 220%;
+    height: 220%;
+    opacity: 1;
+    transition: 0s;
+}
+
+.calculator:hover {
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, .45),
+        0 0 40px rgba(56, 189, 248, .18);
+}
+
+.calculator:hover::after {
+    animation: glowMove 6s linear infinite;
+}
+
+.display {
+    transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.current-operand {
+    animation: fadeIn .4s ease;
+}
+
+.btn:hover {
+    letter-spacing: .5px;
+}
+
+.btn-equal {
+    animation: pulse 3s infinite;
+}
+
+.btn-clear:hover,
+.btn-delete:hover,
+.btn-operator:hover,
+.btn-equal:hover {
+    filter: saturate(120%);
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glowMove {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-20px, 10px);
+    }
+
+    50% {
+        transform: translate(-10px, 30px);
+    }
+
+    75% {
+        transform: translate(15px, 10px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width:768px) {
+
+    body {
+        padding: 1.5rem;
+    }
+
+    .calculator {
+        max-width: 380px;
+        padding: 1.25rem;
+    }
+
+    .display {
+        min-height: 120px;
+        padding: 1.25rem;
+    }
+
+}
+
+@media (max-width:480px) {
+
+    body {
+        padding: 1rem;
+    }
+
+    .calculator {
+        max-width: 100%;
+        padding: 1rem;
+        border-radius: 24px;
+    }
+
+    .display {
+        min-height: 110px;
+        padding: 1rem;
+    }
+
+    .current-operand {
+        font-size: 2.4rem;
+    }
+
+    .previous-operand {
+        font-size: .95rem;
+    }
+
+    .buttons {
+        gap: .75rem;
+    }
+
+    .btn {
+        height: 60px;
+        font-size: 1.1rem;
+    }
+
+}
+
+@media (max-width:360px) {
+
+    .btn {
+        height: 54px;
+        font-size: 1rem;
+    }
+
+    .current-operand {
+        font-size: 2rem;
+    }
+
+}
