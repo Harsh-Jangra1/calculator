@@ -2,27 +2,21 @@
 <html lang="en">
 
 <head>
-  <!-- Basic Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Meta Tags -->
   <meta name="author" content="Harsh Jangra" />
   <meta name="description" content="A responsive calculator built using HTML, CSS, and JavaScript." />
   <meta name="keywords" content="Calculator, HTML, CSS, JavaScript, Frontend Project" />
 
-  <!-- Title -->
   <title>Calculator | Harsh Jangra</title>
 
-  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
@@ -30,49 +24,40 @@
 
   <main class="calculator-container">
     <section class="calculator" aria-label="Calculator">
-
-      <!-- Calculator Display -->
       <header class="display" aria-live="polite">
         <p class="previous-operand"></p>
         <h1 class="current-operand">0</h1>
       </header>
 
-      <!-- Calculator Buttons -->
       <section class="buttons" aria-label="Calculator Buttons">
-        <!-- Row 1 -->
         <button type="button" class="btn btn-clear" data-action="clear">AC</button>
         <button type="button" class="btn btn-delete" data-action="delete">DEL</button>
         <button type="button" class="btn btn-operator" data-operator="%">%</button>
         <button type="button" class="btn btn-operator" data-operator="/">÷</button>
 
-        <!-- Row 2 -->
         <button type="button" class="btn btn-number" data-number="7">7</button>
         <button type="button" class="btn btn-number" data-number="8">8</button>
         <button type="button" class="btn btn-number" data-number="9">9</button>
         <button type="button" class="btn btn-operator" data-operator="*">×</button>
 
-        <!-- Row 3 -->
         <button type="button" class="btn btn-number" data-number="4">4</button>
         <button type="button" class="btn btn-number" data-number="5">5</button>
         <button type="button" class="btn btn-number" data-number="6">6</button>
         <button type="button" class="btn btn-operator" data-operator="-">−</button>
 
-        <!-- Row 4 -->
         <button type="button" class="btn btn-number" data-number="1">1</button>
         <button type="button" class="btn btn-number" data-number="2">2</button>
         <button type="button" class="btn btn-number" data-number="3">3</button>
         <button type="button" class="btn btn-operator" data-operator="+">+</button>
 
-        <!-- Row 5 -->
         <button type="button" class="btn btn-number btn-zero" data-number="0">0</button>
         <button type="button" class="btn btn-number" data-number=".">.</button>
         <button type="button" class="btn btn-equal" data-action="calculate">=</button>
       </section>
-      
+
     </section>
   </main>
 
-  <!-- JavaScript -->
   <script src="./assets/js/script.js"></script>
 
 </body>
